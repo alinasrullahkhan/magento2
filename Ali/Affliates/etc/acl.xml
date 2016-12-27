@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="Ali_Affliates::affliates" sortOrder="10" title="affliates">
+					<resource id="Ali_Affliates::affliates_save" sortOrder="10" title="Save affliates"/>
+					<resource id="Ali_Affliates::affliates_delete" sortOrder="20" title="Delete affliates"/>
+					<resource id="Ali_Affliates::affliates_update" sortOrder="30" title="Update affliates"/>
+					<resource id="Ali_Affliates::affliates_view" sortOrder="40" title="View affliates"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

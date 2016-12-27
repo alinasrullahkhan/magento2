@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<virtualType name="Ali\Affliates\Model\ResourceModel\Affliates\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">ali_affliates</argument>
+			<argument name="resourceModel" xsi:type="string">Ali\Affliates\Model\ResourceModel\Affliates\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="ali_affliates_grid_data_source" xsi:type="string">Ali\Affliates\Model\ResourceModel\Affliates\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+	<preference for="Ali\Affliates\Api\AffliatesRepositoryInterface" type="Ali\Affliates\Model\AffliatesRepository"/>
+	<preference for="Ali\Affliates\Api\Data\AffliatesInterface" type="Ali\Affliates\Model\Affliates"/>
+	<preference for="Ali\Affliates\Api\Data\AffliatesSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+        
+        <preference for="Magento\Catalog\Model\ImageUploader" type="Ali\Affliates\Model\ImageUploader" />
+    <type name="Ali\Affliates\Controller\Adminhtml\Affliates\Image\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Magento\Catalog\CategoryImageUploadFaqs</argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Catalog\CategoryImageUploadFaqs" type="Ali\Affliates\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">affliates/tmp/</argument>
+            <argument name="basePath" xsi:type="string">affliates/final</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+</config>

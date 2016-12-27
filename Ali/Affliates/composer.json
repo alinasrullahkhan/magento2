@@ -1,0 +1,21 @@
+{
+    "name": "ali/module-affliates",
+    "description": "this module is written for sun and sand sports",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Ali Nasrullah",
+            "email": "alinasrulah@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Ali\\Affliates\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}
